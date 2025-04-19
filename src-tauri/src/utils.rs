@@ -8,6 +8,8 @@ use parking_lot::Mutex;
 use std::mem::MaybeUninit;
 use std::{thread, time::Duration};
 use tauri::Emitter;
+use tauri::Manager;
+use tauri::path::BaseDirectory;
 
 use crate::APP_HANDLE;
 
