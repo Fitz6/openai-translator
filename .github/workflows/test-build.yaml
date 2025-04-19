@@ -14,7 +14,17 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Echo Inputs
+        run: |
           echo "Tags: $TAGS"
         env:
           TAGS: ${{ inputs.tags }}
+
+  get-inputs:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Show Inputs
+        env:
+          VERSION: "${{ inputs.tags }}"
+        run: |
+          echo "Inputs Tags: ${{ inputs.tags }}"
